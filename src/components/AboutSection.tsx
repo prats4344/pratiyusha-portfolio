@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Code2, Brain, Rocket, Star } from 'lucide-react';
+import { useParallaxEffect } from '@/hooks/useScrollEffects';
 import developerBg from '@/assets/developer-hero-bg.jpg';
 
 const AboutSection = () => {
@@ -8,6 +9,8 @@ const AboutSection = () => {
     triggerOnce: true,
     threshold: 0.1
   });
+  
+  const parallaxOffset = useParallaxEffect(0.3);
 
   const features = [
     {
@@ -34,15 +37,44 @@ const AboutSection = () => {
 
   return (
     <section id="about" className="py-20 relative overflow-hidden">
-      {/* Background with overlay */}
-      <div className="absolute inset-0 opacity-5">
+      {/* Background with parallax */}
+      <motion.div 
+        className="absolute inset-0 opacity-5 will-change-transform"
+        style={{
+          transform: `translateY(${parallaxOffset}px)`,
+        }}
+      >
         <img 
           src={developerBg} 
           alt="" 
           className="w-full h-full object-cover"
         />
-      </div>
+      </motion.div>
       <div className="absolute inset-0 bg-gradient-to-b from-background/90 to-background" />
+      
+      {/* Floating elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(5)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-primary/20 rounded-full"
+            style={{
+              left: `${20 + i * 15}%`,
+              top: `${30 + i * 10}%`,
+            }}
+            animate={{
+              y: [0, -20, 0],
+              opacity: [0.2, 0.6, 0.2],
+            }}
+            transition={{
+              duration: 3 + i,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.5,
+            }}
+          />
+        ))}
+      </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <motion.div

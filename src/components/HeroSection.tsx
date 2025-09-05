@@ -1,21 +1,40 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Download, ArrowDown } from 'lucide-react';
+import { useParallaxEffect } from '@/hooks/useScrollEffects';
 import developerBg from '@/assets/developer-hero-bg.jpg';
 
 const HeroSection = () => {
+  const parallaxOffset = useParallaxEffect(0.5);
+  
   const scrollToProjects = () => {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 parallax-bg opacity-30"
-        style={{ backgroundImage: `url(${developerBg})` }}
+      {/* Background Image with Parallax */}
+      <motion.div 
+        className="absolute inset-0 parallax-bg opacity-30 will-change-transform"
+        style={{ 
+          backgroundImage: `url(${developerBg})`,
+          transform: `translateY(${parallaxOffset}px)`,
+        }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/60" />
+      
+      {/* Animated gradient overlay */}
+      <motion.div 
+        className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent-purple/10"
+        animate={{
+          opacity: [0.3, 0.6, 0.3],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
       
       {/* Animated Background Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

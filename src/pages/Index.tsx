@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import WelcomeScreen from '@/components/WelcomeScreen';
 import Navigation from '@/components/Navigation';
+import ScrollProgress from '@/components/ScrollProgress';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import SkillsSection from '@/components/SkillsSection';
@@ -21,6 +22,7 @@ const Index = () => {
       
       {!showWelcome && (
         <div className="min-h-screen bg-background">
+          <ScrollProgress />
           <Navigation />
           <HeroSection />
           <AboutSection />
