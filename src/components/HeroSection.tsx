@@ -117,7 +117,7 @@ const HeroSection = () => {
                 rel="noopener noreferrer"
               >
                 <Download className="mr-2 h-5 w-5" />
-                Download Resume
+                View Resume
               </a>
             </Button>
           </motion.div>
