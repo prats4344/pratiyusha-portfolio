@@ -1,13 +1,45 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import WelcomeScreen from '@/components/WelcomeScreen';
+import Navigation from '@/components/Navigation';
+import HeroSection from '@/components/HeroSection';
+import AboutSection from '@/components/AboutSection';
+import SkillsSection from '@/components/SkillsSection';
+import ProjectsSection from '@/components/ProjectsSection';
+import EducationSection from '@/components/EducationSection';
+import ContactSection from '@/components/ContactSection';
 
 const Index = () => {
+  const [showWelcome, setShowWelcome] = useState(true);
+
+  const handleWelcomeComplete = () => {
+    setShowWelcome(false);
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <>
+      {showWelcome && <WelcomeScreen onComplete={handleWelcomeComplete} />}
+      
+      {!showWelcome && (
+        <div className="min-h-screen bg-background">
+          <Navigation />
+          <HeroSection />
+          <AboutSection />
+          <SkillsSection />
+          <ProjectsSection />
+          <EducationSection />
+          <ContactSection />
+          
+          {/* Footer */}
+          <footer className="py-8 border-t border-border bg-card">
+            <div className="max-w-7xl mx-auto px-6 text-center">
+              <p className="text-muted-foreground">
+                © 2024 Pratiyusha Kanungo. Built with ❤️ using React & TypeScript.
+              </p>
+            </div>
+          </footer>
+        </div>
+      )}
+    </>
   );
 };
 
