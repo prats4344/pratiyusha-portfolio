@@ -16,46 +16,46 @@ const SkillsSection = () => {
     {
       title: "Frontend",
       skills: [
-        { name: "HTML", icon: Code2, level: 90 },
-        { name: "CSS", icon: Palette, level: 85 },
-        { name: "Bootstrap", icon: Smartphone, level: 80 },
-        { name: "JavaScript", icon: Code2, level: 85 }
+        { name: "HTML", emoji: "🌐" },
+        { name: "CSS", emoji: "🎨" },
+        { name: "Bootstrap", emoji: "🅱️" },
+        { name: "JavaScript", emoji: "⚡" }
       ]
     },
     {
       title: "Backend",
       skills: [
-        { name: "Express.js", icon: Server, level: 75 },
-        { name: "Python", icon: Code2, level: 90 },
-        { name: "Java", icon: Code2, level: 85 },
-        { name: "OOP", icon: Settings, level: 88 }
+        { name: "Express.js", emoji: "🚀" },
+        { name: "Python", emoji: "🐍" },
+        { name: "Java", emoji: "☕" },
+        { name: "OOP", emoji: "🔧" }
       ]
     },
     {
       title: "Database",
       skills: [
-        { name: "MySQL", icon: Database, level: 80 },
-        { name: "SQLite", icon: Database, level: 85 },
-        { name: "OpenPyXL", icon: FileText, level: 75 }
+        { name: "MySQL", emoji: "🗄️" },
+        { name: "SQLite", emoji: "💾" },
+        { name: "OpenPyXL", emoji: "📊" }
       ]
     },
     {
       title: "Tools & Technologies",
       skills: [
-        { name: "Git", icon: GitBranch, level: 85 },
-        { name: "Docker", icon: Settings, level: 70 },
-        { name: "VS Code", icon: Monitor, level: 95 },
-        { name: "Figma", icon: Figma, level: 75 }
+        { name: "Git", emoji: "🌿" },
+        { name: "Docker", emoji: "🐳" },
+        { name: "VS Code", emoji: "💻" },
+        { name: "Figma", emoji: "🎯" }
       ]
     },
     {
       title: "Machine Learning",
       skills: [
-        { name: "Scikit-learn", icon: Brain, level: 85 },
-        { name: "Pandas", icon: BarChart3, level: 90 },
-        { name: "NumPy", icon: BarChart3, level: 85 },
-        { name: "Matplotlib", icon: BarChart3, level: 80 },
-        { name: "NLP", icon: Brain, level: 75 }
+        { name: "Scikit-learn", emoji: "🤖" },
+        { name: "Pandas", emoji: "🐼" },
+        { name: "NumPy", emoji: "🔢" },
+        { name: "Matplotlib", emoji: "📈" },
+        { name: "NLP", emoji: "🧠" }
       ]
     }
   ];
@@ -92,39 +92,24 @@ const SkillsSection = () => {
                 {category.title}
               </h3>
               
-              <div className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
                     key={skill.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={inView ? { opacity: 1, x: 0 } : {}}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={inView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ 
                       duration: 0.5, 
                       delay: categoryIndex * 0.1 + skillIndex * 0.05 
                     }}
-                    className="flex items-center justify-between p-3 bg-background/50 rounded-lg hover:bg-background/70 smooth-transition group"
+                    className="flex items-center justify-center p-4 bg-background/50 rounded-lg hover:bg-background/70 smooth-transition group hover:scale-105"
                   >
                     <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 smooth-transition">
-                        <skill.icon className="w-4 h-4 text-primary" />
-                      </div>
-                      <span className="font-medium text-card-foreground">{skill.name}</span>
-                    </div>
-                    
-                    <div className="flex items-center space-x-2">
-                      <div className="w-16 h-2 bg-border rounded-full overflow-hidden">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          animate={inView ? { width: `${skill.level}%` } : {}}
-                          transition={{ 
-                            duration: 1, 
-                            delay: categoryIndex * 0.1 + skillIndex * 0.1 + 0.5 
-                          }}
-                          className="h-full bg-gradient-to-r from-primary to-accent-purple rounded-full"
-                        />
-                      </div>
-                      <span className="text-xs text-muted-foreground w-8 text-right">
-                        {skill.level}%
+                      <span className="text-2xl group-hover:scale-110 smooth-transition">
+                        {skill.emoji}
+                      </span>
+                      <span className="font-medium text-card-foreground group-hover:text-primary smooth-transition">
+                        {skill.name}
                       </span>
                     </div>
                   </motion.div>
