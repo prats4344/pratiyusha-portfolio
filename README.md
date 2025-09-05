@@ -1,73 +1,71 @@
-# Welcome to your Lovable project
+# 🌟 Pratiyusha Kanungo Portfolio
 
-## Project info
+Welcome to my personal portfolio!  
+I’m **Pratiyusha Kanungo**, a passionate **B.Tech Computer Science (AIML)** student and aspiring developer, eager to create innovative solutions and explore cutting-edge technologies.  
 
-**URL**: https://lovable.dev/projects/c08af1c6-118f-4587-99aa-62a4060e3f57
+---
 
-## How can I edit this code?
+## 🚀 About Me
 
-There are several ways of editing your application.
+- 🎓 Pursuing **B.Tech CSE (Artificial Intelligence & Machine Learning)**  
+- 💻 Skilled in **AI/ML, Java, Tailwind CSS, and modern web technologies**  
+- 🌱 Lifelong learner, active in coding competitions & hackathons  
+- 🔎 Open to **new opportunities, collaborations, and internships**  
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/c08af1c6-118f-4587-99aa-62a4060e3f57) and start prompting.
+## 🎨 Portfolio Highlights
 
-Changes made via Lovable will be committed automatically to this repo.
+- A clean, responsive **React + Vite portfolio website**  
+- Showcases **skills, projects, education, and achievements**  
+- Smooth animations, responsive design, and easy navigation  
+- Integrated **social links (GitHub, LinkedIn, Email)**  
+- Features like **real-time year updates** & mobile-friendly menu  
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🎯 Features
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **✨ Hero Section** – Quick intro & call-to-action  
+- **🛠 Skills** – Tech stack & tools expertise  
+- **📂 Projects** – Selected works & contributions  
+- **🎓 Education** – Academic background with CGPA/percentages  
+- **📬 Contact** – Easy ways to connect  
+- **💡 Clean Code** – Built with React & best practices  
+- **📱 Responsive** – Works seamlessly across devices  
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 📂 Tech Stack
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+This project is built with:  
+- ⚡ Vite  
+- ⚛️ React  
+- 📘 TypeScript  
+- 🎨 shadcn-ui  
+- 🎯 Tailwind CSS  
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## 🌐 Live Demo
 
-**Edit a file directly in GitHub**
+👉 Check it out here:  
+[**Live Portfolio**](https://pratiyushaportfolio.vercel.app/)  
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## 📬 Contact Me
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- 🐙 [GitHub](https://github.com/prats4344)  
+- 💼 [LinkedIn](https://www.linkedin.com/in/pratiyushakanungo-sp4344)  
+- 📧 Email: **kanungopratiyusha@gmail.com**  
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## 💡 Inspiration & Credits
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Thanks to the **open-source community** & amazing UI libraries that made this project possible 🙏  
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/c08af1c6-118f-4587-99aa-62a4060e3f57) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+✨ *Feel free to explore, suggest improvements, or collaborate!* ✨
