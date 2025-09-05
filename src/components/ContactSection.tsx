@@ -1,51 +1,61 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { Send, Mail, Github, Linkedin, MapPin, Phone } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Send, Mail, Github, Linkedin, MapPin } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1
+    threshold: 0.1,
   });
 
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     try {
-      // For now, we'll simulate email sending
-      // In a real implementation, you'd use a backend service or Supabase Edge Functions
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for your message. I'll get back to you soon!",
-      });
-      
-      setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
+      const response = await fetch(
+        "https://wsiafoosbmsndhiuppzz.supabase.co/functions/v1/dynamic-service",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for your message. I'll get back to you soon!",
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        const data = await response.json();
+        throw new Error(data.error || "Failed to send message.");
+      }
+    } catch (error: any) {
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive"
+        description: error.message,
+        variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
@@ -57,14 +67,14 @@ const ContactSection = () => {
       icon: Mail,
       label: "Email",
       value: "kanungopratiyusha@gmail.com",
-      link: "mailto:kanungopratiyusha@gmail.com"
+      link: "mailto:kanungopratiyusha@gmail.com",
     },
     {
       icon: MapPin,
       label: "Location",
       value: "Bhubaneswar, Odisha",
-      link: null
-    }
+      link: null,
+    },
   ];
 
   const socialLinks = [
@@ -72,21 +82,20 @@ const ContactSection = () => {
       icon: Github,
       label: "GitHub",
       link: "https://github.com/prats4344",
-      color: "hover:text-gray-300"
+      color: "hover:text-gray-300",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
       link: "https://www.linkedin.com/in/pratiyushakanungo-sp4344/",
-      color: "hover:text-blue-400"
-    }
+      color: "hover:text-blue-400",
+    },
   ];
 
   return (
     <section id="contact" className="py-20 relative overflow-hidden">
-      {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/20 to-background" />
-      
+
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <motion.div
           ref={ref}
@@ -103,7 +112,6 @@ const ContactSection = () => {
             Let's discuss opportunities, collaborations, or just connect!
           </p>
         </motion.div>
-
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Contact Form */}
           <motion.div
@@ -112,8 +120,10 @@ const ContactSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="skill-card"
           >
-            <h3 className="text-2xl font-bold mb-6 text-card-foreground">Send Message</h3>
-            
+            <h3 className="text-2xl font-bold mb-6 text-card-foreground">
+              Send Message
+            </h3>
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Input
@@ -126,7 +136,7 @@ const ContactSection = () => {
                   className="bg-background border-border focus:border-primary"
                 />
               </div>
-              
+
               <div>
                 <Input
                   type="email"
@@ -138,7 +148,7 @@ const ContactSection = () => {
                   className="bg-background border-border focus:border-primary"
                 />
               </div>
-              
+
               <div>
                 <Textarea
                   name="message"
@@ -150,7 +160,7 @@ const ContactSection = () => {
                   className="bg-background border-border focus:border-primary resize-none"
                 />
               </div>
-              
+
               <Button
                 type="submit"
                 disabled={isSubmitting}
@@ -170,7 +180,6 @@ const ContactSection = () => {
               </Button>
             </form>
           </motion.div>
-
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
@@ -179,8 +188,10 @@ const ContactSection = () => {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold mb-6 text-card-foreground">Contact Information</h3>
-              
+              <h3 className="text-2xl font-bold mb-6 text-card-foreground">
+                Contact Information
+              </h3>
+
               <div className="space-y-4">
                 {contactInfo.map((info, index) => (
                   <motion.div
@@ -196,8 +207,8 @@ const ContactSection = () => {
                     <div>
                       <p className="text-sm text-muted-foreground">{info.label}</p>
                       {info.link ? (
-                        <a 
-                          href={info.link} 
+                        <a
+                          href={info.link}
                           className="font-medium text-card-foreground hover:text-primary smooth-transition"
                         >
                           {info.value}
@@ -210,10 +221,11 @@ const ContactSection = () => {
                 ))}
               </div>
             </div>
-
             {/* Social Links */}
             <div>
-              <h4 className="text-xl font-bold mb-4 text-card-foreground">Connect With Me</h4>
+              <h4 className="text-xl font-bold mb-4 text-card-foreground">
+                Connect With Me
+              </h4>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
@@ -231,7 +243,6 @@ const ContactSection = () => {
                 ))}
               </div>
             </div>
-
             {/* Quick Stats */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
