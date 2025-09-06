@@ -13,17 +13,22 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      
       {/* Background Image with Parallax */}
       <motion.div 
-        className="absolute inset-0 parallax-bg opacity-15 will-change-transform"
+        className="absolute inset-0 parallax-bg will-change-transform"
         style={{ 
           backgroundImage: `url(${developerBg})`,
           transform: `translateY(${parallaxOffset}px)`,
+          opacity: 0.6, // more visible
+          filter: 'brightness(0.75)' // slightly darken so text remains readable
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/70" />
-      
-      {/* Animated gradient overlay */}
+
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/60 to-background/50" />
+
+      {/* Animated Gradient Overlay */}
       <motion.div 
         className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent-purple/10"
         animate={{
