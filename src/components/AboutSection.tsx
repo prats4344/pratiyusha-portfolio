@@ -14,14 +14,14 @@ const AboutSection = () => {
 
   const features = [
     {
-      icon: Code2,
-      title: "Frontend Development",
-      description: "Skilled in building responsive and user-friendly web interfaces"
-    },
-    {
       icon: Brain,
       title: "AI & Machine Learning",
       description: "Specialized in AIML with hands-on project experience"
+    },
+    {
+      icon: Code2,
+      title: "Frontend Development",
+      description: "Skilled in building responsive and user-friendly web interfaces"
     },
     {
       icon: Rocket,
@@ -133,7 +133,7 @@ const AboutSection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                className="skill-card text-center group"
+                className="skill-card text-center group bg-background/50 p-6 rounded-2xl border border-primary/30 shadow-glow hover:shadow-glow-strong smooth-transition"
               >
                 <div className="w-12 h-12 mx-auto mb-4 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 smooth-transition">
                   <feature.icon className="w-6 h-6 text-primary" />
