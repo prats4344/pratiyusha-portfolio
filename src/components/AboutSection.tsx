@@ -118,17 +118,6 @@ const AboutSection = () => {
                 tech industry by developing solutions that push the boundaries of what's possible.
               </p>
             </div>
-
-            <div className="grid grid-cols-2 gap-4 mt-8">
-              <div className="text-center p-4 bg-card rounded-lg border border-border">
-                <div className="text-2xl font-bold text-primary">8.12</div>
-                <div className="text-sm text-muted-foreground">CGPA</div>
-              </div>
-              <div className="text-center p-4 bg-card rounded-lg border border-border">
-                <div className="text-2xl font-bold text-primary">4+</div>
-                <div className="text-sm text-muted-foreground">Projects</div>
-              </div>
-            </div>
           </motion.div>
 
           {/* Features Grid */}
