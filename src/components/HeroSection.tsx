@@ -111,7 +111,7 @@ const HeroSection = () => {
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6 text-lg font-semibold smooth-transition"
             >
               <a 
-                href="https://drive.google.com/file/d/1yYRZ7rMUGqcB4SAgXXk4312Yg5aayTNh/view" 
+                href="https://drive.google.com/file/d/1fYG_iVZqC32aDQhU69CtyudyhwotwhQe/view?usp=sharing" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
