@@ -13,7 +13,7 @@ const WelcomeScreen = ({ onComplete }: { onComplete: () => void }) => {
     "BIENVENIDO",
     "BIENVENUE",
     "WILLKOMMEN",
-    "BENVENUTO"
+    "환영합니다"  // Korean welcome
   ];
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const WelcomeScreen = ({ onComplete }: { onComplete: () => void }) => {
         }
         return prev + 1;
       });
-    }, 800); // Display each text for 800ms
+    }, 1200); // Slower interval for better readability
 
     return () => clearInterval(interval);
   }, [onComplete]);
@@ -66,7 +66,7 @@ const WelcomeScreen = ({ onComplete }: { onComplete: () => void }) => {
             </AnimatePresence>
           </div>
 
-          {/* Animated particles */}
+          {/* Animated background particles */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {[...Array(15)].map((_, i) => (
               <motion.div
@@ -95,3 +95,4 @@ const WelcomeScreen = ({ onComplete }: { onComplete: () => void }) => {
 };
 
 export default WelcomeScreen;
+
