@@ -119,23 +119,6 @@ const ContactSection = () => {
                 ))}
               </div>
             </div>
-
-            {/* Quick Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 1 }}
-              className="grid grid-cols-2 gap-4"
-            >
-              <div className="text-center p-4 bg-card rounded-lg border border-border">
-                <div className="text-2xl font-bold text-primary">24h</div>
-                <div className="text-sm text-muted-foreground">Response Time</div>
-              </div>
-              <div className="text-center p-4 bg-card rounded-lg border border-border">
-                <div className="text-2xl font-bold text-primary">Open</div>
-                <div className="text-sm text-muted-foreground">To Opportunities</div>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </div>
@@ -144,3 +127,4 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+
