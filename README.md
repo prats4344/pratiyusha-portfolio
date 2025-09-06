@@ -50,7 +50,7 @@ This project is built with:
 ## 🌐 Live Demo
 
 👉 Check it out here:  
-[**Live Portfolio**](https://pratiyushaportfolio.vercel.app/)  
+[**Live Portfolio**](https://pratiyusha-portfolio.vercel.app/)  
 
 ---
 
