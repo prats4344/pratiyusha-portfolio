@@ -56,7 +56,7 @@ const SkillsSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: categoryIndex * 0.15 }}
-              className="bg-background/50 p-6 rounded-2xl shadow-glow hover:shadow-glow-strong smooth-transition"
+              className="bg-background/50 p-6 rounded-2xl shadow-glow hover:shadow-glow-strong smooth-transition border border-primary/30"
             >
               <h3 className="text-2xl font-semibold text-primary mb-6 text-center">
                 {category.title}
@@ -87,4 +87,3 @@ const SkillsSection = () => {
 };
 
 export default SkillsSection;
-
