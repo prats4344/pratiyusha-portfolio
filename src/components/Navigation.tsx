@@ -25,9 +25,33 @@ const Navigation = () => {
   }, []);
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
+    const element = document.querySelector(href) as HTMLElement;
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      // Add dramatic scroll effect
+      const startPosition = window.pageYOffset;
+      const targetPosition = element.offsetTop - 80; // Account for nav height
+      const distance = targetPosition - startPosition;
+      const duration = Math.min(Math.abs(distance) / 2, 2000); // Max 2 seconds
+      
+      let start: number | null = null;
+      
+      const step = (timestamp: number) => {
+        if (!start) start = timestamp;
+        const progress = Math.min((timestamp - start) / duration, 1);
+        
+        // Dramatic easing function
+        const easeInOutCubic = (t: number) => 
+          t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+        
+        const currentPosition = startPosition + distance * easeInOutCubic(progress);
+        window.scrollTo(0, currentPosition);
+        
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        }
+      };
+      
+      requestAnimationFrame(step);
     }
     setIsMobileMenuOpen(false);
   };
