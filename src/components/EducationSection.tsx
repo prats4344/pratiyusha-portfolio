@@ -15,7 +15,7 @@ const EducationSection = () => {
       location: "Bhubaneswar",
       duration: "2023 – 2027",
       grade: "CGPA: 8.12",
-      type: "current"
+      type: "completed"
     },
     {
       degree: "Higher Secondary (12th CBSE)",
@@ -38,7 +38,7 @@ const EducationSection = () => {
   const certifications = [
     {
       title: "AWS Cloud Virtual Experience Program",
-      issuer: "AWS",
+      issuer: "Forage",
       link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/pmnMSL4QiQ9JCgE3W/kkE9HyeNcw6rwCRGw_pmnMSL4QiQ9JCgE3W_aCLeM3ZiGNd9xRiuz_1751296774040_completion_certificate.pdf"
     },
     {
