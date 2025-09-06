@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Mail, Github, Linkedin, MapPin } from 'lucide-react';
+import ContactForm from './ContactForm';
 
 const ContactSection = () => {
   const [ref, inView] = useInView({
@@ -120,6 +121,9 @@ const ContactSection = () => {
               </div>
             </div>
           </motion.div>
+
+          {/* Contact Form */}
+          <ContactForm />
         </div>
       </div>
     </section>
