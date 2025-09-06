@@ -31,7 +31,7 @@ const ProjectsSection = () => {
     {
       title: "FinWise",
       description: "Personal finance tracker with intuitive expense categorization, investment tracking, and interactive trend visualization. Features responsive design and comprehensive financial summaries.",
-      tech: ["Flask", "SQLAlchemy", "Chart.js", "HTML5", "CSS3"],
+      tech: ["Flask", "SQLAlchemy", "Chart.js", "HTML", "CSS"],
       icon: CreditCard,
       github: "https://github.com/prats4344/finwise-finance-tracker",
       live: "https://finwise-app.onrender.com",
@@ -65,7 +65,7 @@ const ProjectsSection = () => {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent-purple mx-auto mb-8" />
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Innovative solutions spanning fintech, inventory management, personal finance, and machine learning
+            A showcase of my work spanning responsive web applications and AI/ML projects, highlighting my passion for building impactful solutions
           </p>
         </motion.div>
 
