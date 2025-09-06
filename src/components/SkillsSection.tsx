@@ -23,12 +23,12 @@ const SkillsSection = () => {
       ]
     },
     {
-      title: "Backend",
+      title: "Core CS",
       skills: [
-        { name: "Express.js", emoji: "🚀" },
+        { name: "DSA", emoji: "🚀" },
         { name: "Python", emoji: "🐍" },
         { name: "Java", emoji: "☕" },
-        { name: "OOP", emoji: "🔧" }
+        { name: "OOPS", emoji: "🔧" }
       ]
     },
     {
@@ -53,7 +53,6 @@ const SkillsSection = () => {
       skills: [
         { name: "Scikit-learn", emoji: "🤖" },
         { name: "Pandas", emoji: "🐼" },
-        { name: "NumPy", emoji: "🔢" },
         { name: "Matplotlib", emoji: "📈" },
         { name: "NLP", emoji: "🧠" }
       ]
