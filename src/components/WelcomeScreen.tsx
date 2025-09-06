@@ -11,9 +11,7 @@ const WelcomeScreen = ({ onComplete }: { onComplete: () => void }) => {
     "ସ୍ୱାଗତ",
     "স্বাগতম",
     "BIENVENIDO",
-    "BIENVENUE",
-    "WILLKOMMEN",
-    "환영합니다"  // Korean welcome
+    "환영합니다"  
   ];
 
   useEffect(() => {
