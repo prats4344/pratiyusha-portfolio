@@ -27,6 +27,10 @@ const SkillsSection = () => {
     {
       title: "Tools & Technologies",
       skills: ["Git", "Docker", "VS Code", "Figma"]
+    },
+    {
+      title: "Soft Skills",
+      skills: ["Communication", "Teamwork", "Adaptability", "Reliability"]
     }
   ];
 
@@ -45,7 +49,7 @@ const SkillsSection = () => {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent-purple mx-auto mb-8" />
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive toolkit spanning AIML, frontend, databases, and cutting-edge technologies
+            A comprehensive toolkit spanning AIML, frontend, databases, tools, and essential soft skills
           </p>
         </motion.div>
 
@@ -56,23 +60,23 @@ const SkillsSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: categoryIndex * 0.15 }}
-              className="bg-background/50 p-6 rounded-2xl shadow-glow hover:shadow-glow-strong smooth-transition border border-primary/30"
+              className="bg-background/50 p-8 rounded-3xl border border-primary/40 shadow-glow hover:shadow-glow-strong smooth-transition"
             >
               <h3 className="text-2xl font-semibold text-primary mb-6 text-center">
                 {category.title}
               </h3>
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
                     key={skill}
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={inView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ 
-                      duration: 0.5, 
-                      delay: categoryIndex * 0.1 + skillIndex * 0.05 
+                    transition={{
+                      duration: 0.5,
+                      delay: categoryIndex * 0.1 + skillIndex * 0.05
                     }}
-                    className="p-4 bg-background rounded-md text-center font-medium text-card-foreground hover:bg-background/70 smooth-transition group shadow-sm hover:shadow-md hover:shadow-primary/50"
+                    className="p-4 bg-background rounded-lg text-center font-medium text-card-foreground hover:bg-background/70 smooth-transition group shadow-sm hover:shadow-md hover:shadow-primary/50"
                   >
                     {skill}
                   </motion.div>
