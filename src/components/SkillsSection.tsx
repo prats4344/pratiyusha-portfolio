@@ -1,10 +1,5 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { 
-  Code2, Database, Settings, Palette, 
-  Brain, BarChart3, GitBranch, Monitor,
-  Server, Smartphone, FileText, Figma
-} from 'lucide-react';
 
 const SkillsSection = () => {
   const [ref, inView] = useInView({
@@ -14,48 +9,24 @@ const SkillsSection = () => {
 
   const skillCategories = [
     {
+      title: "Machine Learning",
+      skills: ["Scikit-learn", "TensorFlow", "Matplotlib", "NLP"]
+    },
+    {
+      title: "Core Computer Science",
+      skills: ["Data Structures & Algorithms", "Python", "Java", "OOPS"]
+    },
+    {
       title: "Frontend",
-      skills: [
-        { name: "HTML", emoji: "🌐" },
-        { name: "CSS", emoji: "🎨" },
-        { name: "Bootstrap", emoji: "🅱️" },
-        { name: "JavaScript", emoji: "⚡" }
-      ]
+      skills: ["HTML", "CSS", "Bootstrap", "JavaScript"]
     },
     {
-      title: "Core CS",
-      skills: [
-        { name: "DSA", emoji: "🚀" },
-        { name: "Python", emoji: "🐍" },
-        { name: "Java", emoji: "☕" },
-        { name: "OOPS", emoji: "🔧" }
-      ]
-    },
-    {
-      title: "Database",
-      skills: [
-        { name: "MySQL", emoji: "🗄️" },
-        { name: "SQLite", emoji: "💾" },
-        { name: "OpenPyXL", emoji: "📊" }
-      ]
+      title: "Databases",
+      skills: ["MySQL", "SQLite", "OpenPyXL"]
     },
     {
       title: "Tools & Technologies",
-      skills: [
-        { name: "Git", emoji: "🌿" },
-        { name: "Docker", emoji: "🐳" },
-        { name: "VS Code", emoji: "💻" },
-        { name: "Figma", emoji: "🎯" }
-      ]
-    },
-    {
-      title: "Machine Learning",
-      skills: [
-        { name: "Scikit-learn", emoji: "🤖" },
-        { name: "Pandas", emoji: "🐼" },
-        { name: "Matplotlib", emoji: "📈" },
-        { name: "NLP", emoji: "🧠" }
-      ]
+      skills: ["Git", "Docker", "VS Code", "Figma"]
     }
   ];
 
@@ -74,43 +45,36 @@ const SkillsSection = () => {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent-purple mx-auto mb-8" />
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive toolkit spanning frontend, backend, databases, and cutting-edge technologies
+            A comprehensive toolkit spanning AIML, frontend, databases, and cutting-edge technologies
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
-              className="skill-card"
+              transition={{ duration: 0.6, delay: categoryIndex * 0.15 }}
+              className="bg-background/50 p-6 rounded-xl shadow-lg smooth-transition"
             >
-              <h3 className="text-xl font-bold text-card-foreground mb-6 text-center">
+              <h3 className="text-2xl font-semibold text-primary mb-4 text-center">
                 {category.title}
               </h3>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
-                    key={skill.name}
+                    key={skill}
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={inView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ 
                       duration: 0.5, 
                       delay: categoryIndex * 0.1 + skillIndex * 0.05 
                     }}
-                    className="flex items-center justify-center p-4 bg-background/50 rounded-lg hover:bg-background/70 smooth-transition group hover:scale-105"
+                    className="p-4 bg-background rounded-md text-center font-medium text-card-foreground hover:bg-background/70 smooth-transition group"
                   >
-                    <div className="flex items-center space-x-3">
-                      <span className="text-2xl group-hover:scale-110 smooth-transition">
-                        {skill.emoji}
-                      </span>
-                      <span className="font-medium text-card-foreground group-hover:text-primary smooth-transition">
-                        {skill.name}
-                      </span>
-                    </div>
+                    {skill}
                   </motion.div>
                 ))}
               </div>
@@ -123,3 +87,4 @@ const SkillsSection = () => {
 };
 
 export default SkillsSection;
+
