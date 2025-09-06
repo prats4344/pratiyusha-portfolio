@@ -14,7 +14,7 @@ const SkillsSection = () => {
     },
     {
       title: "Core Computer Science",
-      skills: ["Data Structures & Algorithms", "Python", "Java", "OOPS"]
+      skills: ["DSA", "Python", "Java", "OOPS"]
     },
     {
       title: "Frontend",
@@ -22,7 +22,7 @@ const SkillsSection = () => {
     },
     {
       title: "Databases",
-      skills: ["MySQL", "SQLite", "OpenPyXL"]
+      skills: ["SQLite", "MySQL", "OpenPyXL"]
     },
     {
       title: "Tools & Technologies",
@@ -56,9 +56,9 @@ const SkillsSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: categoryIndex * 0.15 }}
-              className="bg-background/50 p-6 rounded-xl shadow-lg smooth-transition"
+              className="bg-background/50 p-6 rounded-2xl shadow-glow hover:shadow-glow-strong smooth-transition"
             >
-              <h3 className="text-2xl font-semibold text-primary mb-4 text-center">
+              <h3 className="text-2xl font-semibold text-primary mb-6 text-center">
                 {category.title}
               </h3>
               
@@ -72,7 +72,7 @@ const SkillsSection = () => {
                       duration: 0.5, 
                       delay: categoryIndex * 0.1 + skillIndex * 0.05 
                     }}
-                    className="p-4 bg-background rounded-md text-center font-medium text-card-foreground hover:bg-background/70 smooth-transition group"
+                    className="p-4 bg-background rounded-md text-center font-medium text-card-foreground hover:bg-background/70 smooth-transition group shadow-sm hover:shadow-md hover:shadow-primary/50"
                   >
                     {skill}
                   </motion.div>
