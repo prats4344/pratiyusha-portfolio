@@ -106,10 +106,9 @@ const AboutSection = () => {
               </p>
               
               <p className="mb-6">
-                With a strong foundation in both <span className="text-primary font-semibold">frontend technologies</span>, 
-                I enjoy building responsive and user-friendly web applications. My expertise in 
-                <span className="gradient-text font-semibold"> artificial intelligence and machine learning</span> allows 
-                me to create intelligent systems that make a meaningful impact.
+                My expertise in <span className="gradient-text font-semibold"> artificial intelligence and machine learning</span> allows 
+                me to create intelligent systems that make a meaningful impact. With a strong foundation in <span className="text-primary font-semibold">frontend technologies</span>, 
+                I enjoy building responsive and user-friendly web applications.
               </p>
               
               <p>
