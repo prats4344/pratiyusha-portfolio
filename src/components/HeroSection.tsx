@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Download, ArrowDown } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 import { useParallaxEffect } from '@/hooks/useScrollEffects';
 import developerBg from '@/assets/developer-hero-bg.jpg';
 
@@ -20,8 +20,8 @@ const HeroSection = () => {
         style={{ 
           backgroundImage: `url(${developerBg})`,
           transform: `translateY(${parallaxOffset}px)`,
-          opacity: 0.6, // more visible
-          filter: 'brightness(0.75)' // slightly darken so text remains readable
+          opacity: 0.6,
+          filter: 'brightness(0.75)'
         }}
       />
 
@@ -31,14 +31,8 @@ const HeroSection = () => {
       {/* Animated Gradient Overlay */}
       <motion.div 
         className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent-purple/10"
-        animate={{
-          opacity: [0.3, 0.6, 0.3],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
+        animate={{ opacity: [0.3, 0.6, 0.3] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       />
       
       {/* Animated Background Particles */}
@@ -121,7 +115,6 @@ const HeroSection = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                <Download className="mr-2 h-5 w-5" />
                 View Resume
               </a>
             </Button>
